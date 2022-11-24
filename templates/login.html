@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<section class="menu-container">
+    <div>
+        <h3>Login</h3>
+    </div>
+    <form method="post" id="loginform">
+        <label for="accno">Account No.</label>
+        <input type="text" name="accno" id="accno" value="1">
+        <label for="passwd">Password</label>
+        <input type="text" name="passwd" id="passwd" value="1234">
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+{% endblock %}

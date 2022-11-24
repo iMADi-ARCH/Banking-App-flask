@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %} Home {% endblock %} </title>
+</head>
+
+<body>
+    <div class="heading-container">
+        <h1>Welcome to Mad Bank</h1>
+        <h4>Not always at your service.</h4>
+        <h3>
+
+            {% if logged_user_data %}
+            Logged in as {{ logged_user_data["name"].capitalize() }}.
+            {% endif %}
+
+        </h3>
+    </div>
+    <section class="main-container">
+        <section class="menu-container nav">
+            <li> <a href="/signup"><button name="signup"> New User Registration</button></a></li>
+            <li> <a href="/login"><button name="login"> LogIn</button></a></li>
+            <li> <a href="/personal"><button name="personal"> Personal Banking</button></a></li>
+            <li> <a href="/"><button name="home">Home</button></a></li>
+        </section>
+
+        {% block content %}
+        {% endblock %}
+
+        <!-- <section class="menu-container">
+        <div>
+            <h3>Login</h3>
+            <h4>Logged in as Adi.</h4>
+        </div>
+        <form method="get" id="loginform">
+            <label for="accno">Account No.</label>
+            <input type="text" name="accno" id="accno">
+            <label for="passwd">Password</label>
+            <input type="text" name="passwd" id="passwd">
+            <button type="submit">Submit</button>
+        </form>
+    </section> -->
+    </section>
+</body>
+
+</html>

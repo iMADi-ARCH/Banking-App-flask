@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Personal {% endblock %}
+
+
+{% block content %}
+
+<section class="menu-container">
+    <div>
+        <h3>Personal Banking</h3>
+        {% if logged_user_data %}
+        <p>Your Balance: {{ logged_user_data["balance"] }}</p>
+        {% endif %}
+    </div>
+    <ul class="menu-items-container">
+        <form action="/deposit" method="post" class="gridform">
+            <input type="number" name="dpam" id="dpam">
+            <button type="submit" name="deposit"> Deposit </button>
+        </form>
+        <form action="/withdraw" method="post" class="gridform">
+            <input type="number" name="wtam" id="wtam">
+            <button type="submit" name="withdraw"> Withdraw </button>
+        </form>
+        <!-- <li> <a href="/withdraw"><button name="withdraw"> Withdraw</button></a></li> -->
+        <li> <a href="/delete"><button name="delete">Delete Account</button></a></li>
+    </ul>
+</section>
+
+{% endblock %}

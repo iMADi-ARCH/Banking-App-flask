@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %} Signup {% endblock %}
+
+{% block content %}
+
+
+<section class="menu-container">
+    <div>
+        <h3>Signup</h3>
+    </div>
+    <form method="POST" id="signupform">
+        <label for="accno">Account No.</label>
+        <input type="text" name="accno" id="accno" value="4">
+
+        <label for="name">Full name</label>
+        <input type="text" name="name" id="name" value="Mad Man">
+
+        <label for="branch">Branch code</label>
+        <input type="text" name="branch" id="branch" value="PAT">
+
+        <label for="passwd">Create Password</label>
+        <input type="text" name="passwd" id="passwd" value="1234">
+
+        <button type="submit">Submit</button>
+
+        {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+        {% elif success %}
+        <div class="success">
+            {{ success }}
+        </div>
+        {% endif %}
+
+        <!-- Account Number: 1
+        Full name: mad
+        Enter Branch code (PAT): del
+        Create Password: 45 -->
+    </form>
+</section>
+
+
+{% endblock %}

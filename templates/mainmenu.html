@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="menu-container">
+    <div>
+        <h3>Main Menu</h3>
+    </div>
+    <ul class="menu-items-container">
+        <li> <a href="/signup"><button name="signup"> New User Registration</button></a></li>
+        <li> <a href="/login"><button name="login"> LogIn</button></a></li>
+        <li> <a href="/personal"><button name="personal"> Personal Banking</button></a></li>
+    </ul>
+</section>
+
+{% endblock %}

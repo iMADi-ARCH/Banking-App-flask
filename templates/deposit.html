@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} Deposit {% endblock %}
+
+
+{% block content %}
+
+<section class="menu-container">
+    <div>
+        <h3>Deposit</h3>
+        {% if logged_user_data %}
+        <p>Your Balance: {{ logged_user_data["balance"] }}</p>
+        {% endif %}
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% elif am %}
+        <p class="success">INR {{ am }} deposited successfully.</p>
+        <p class="success">New Balance is {{ newam }}.</p>
+        {% endif %}
+        <li> <a href="/personal"><button name="personal">Back</button></a></li>
+    </div>
+</section>
+
+{% endblock %}
